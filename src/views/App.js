@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Spinner from 'react-spinkit';
 import Login from './Login';
+import Register from './Register';
 import '../styles/App.css';
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
     super(props);
     this.state = {
       loading: true,
-      authToken: null
+      authToken: null,
+      showRegister: false
     }
   }
 
@@ -19,6 +21,15 @@ class App extends Component {
     console.log(authToken);
     // Mock API.
     setTimeout(() => { this.setState({loading: false}); }, 5000);
+  }
+
+  /* Toggles Showing/Hiding of Register Page */
+  toggleRegister = () => {
+    var currState = this.state.showRegister;
+    console.log("Toggling register from: " + currState);
+    this.setState({
+      showRegister: !currState
+    });
   }
 
   render() {
@@ -38,9 +49,16 @@ class App extends Component {
         );
       }
       else {
-        return (
-          <Login />          
-        );
+        if (this.state.showRegister) {
+          return (
+            <Register toggleRegister={this.toggleRegister} />
+          );
+        }
+        else {
+          return (
+            <Login toggleRegister={this.toggleRegister} />          
+          );
+        }
       }
     }
   }
