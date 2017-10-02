@@ -2,9 +2,10 @@
 
 /* Container for Login form panel. */
 .login-container {
-    border: 1px solid black;
+    background-color: #FFF9FB;
+    border-top: 10px solid #48BEFF;
     border-radius: 10px;
-    height: 400px;
+    height: 300px;
     width:  400px;
     position: absolute;
     top:0;
@@ -12,4 +13,71 @@
     left: 0;
     right: 0;
     margin: auto;
-  }
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.18);
+}
+
+/* Container for Login panel header. */
+.login-header {
+    user-select: none;
+    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-size: 40px;
+    padding: 20px;
+    border-bottom: 2px solid #EFEAEC;
+}
+
+/* Container for Login form. */
+.login-body {
+    margin: auto;
+    padding-top: 40px;
+    background-color: #F9FCFF;
+}
+
+/* Login button. */
+.login-button {
+    font-size: 20px;
+    font-variant: small-caps;
+    border-radius: 5px;
+    background-color: #F1EDEF;
+    
+    width: 200px;
+    border: 1px solid #E3E6E8;
+    padding: 10px 22px;
+}
+.login-button:hover {
+    background-color: #EFEAEC;
+    cursor: pointer;
+    /* color: #48BEFF; */
+    border: 1px solid #48BEFF;
+}
+
+/* Form Input Fields. */
+input {
+    height: 90px;
+    width: 300px;
+    border: 1px solid #EFEAEC;
+    border-radius: 10px;
+    height: 30px;
+    padding-left: 7.5px;
+    /* text-align: center; */
+    font-size: 14px;
+}
+input:focus{
+    border: 1px solid #48BEFF;
+    outline: none;
+}
+
+/* Register Link */
+.register-link {
+    float: right;
+    margin-top: 50px;
+    font-size: 20px;
+    font-variant: small-caps;
+    border-radius: 10px;
+    background-color: #EFEAEC;
+    border: 1px solid #C6C2C4;
+    padding: 10px 22px;
+}
+.register-link:hover {
+    cursor: pointer;
+    background-color: #C6C2C4;
+}
