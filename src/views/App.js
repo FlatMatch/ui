@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Spinner from 'react-spinkit';
 import Login from './Login';
-import './App.css';
+import '../styles/App.css';
 
 class App extends Component {
 
@@ -24,10 +24,8 @@ class App extends Component {
   render() {
     if (this.state.loading) {
       return (
-        <div className="wrapper" align="center">
-          <div className="middle">
-            <Spinner name="cube-grid" />        
-          </div>
+        <div className="loading-spinner">
+          <Spinner name="cube-grid" />
         </div>
       );
     }
