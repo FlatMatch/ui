@@ -1,14 +1,10 @@
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: 200px;
-    grid-template-areas: 
-      ". a a ."
-      ". a a .";
-  }
-  .middle {
-    grid-area: a;
-    align-self: center;
-    justify-self: center;
-  }
+.loading-spinner {
+  height: 100px;
+  width:  100px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
