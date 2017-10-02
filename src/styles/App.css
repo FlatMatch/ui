@@ -1,3 +1,6 @@
+/* Handle Splash Page / Loading Page CSS */
+
+/* Container for loading spinner. */
 .loading-spinner {
   height: 100px;
   width:  100px;
