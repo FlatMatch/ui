@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import '../../styles/Login.css';
 
 export default class Login extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  login = () => {
+    alert("@TODO Logging In");
+  }
+
+  toggleRegister = () => {
+    this.props.toggleRegister();
+  }
+
   render() {
     return (
       <div className="login-container">
@@ -18,10 +31,10 @@ export default class Login extends Component {
           </div>
           <br/>
           <div align="center">
-            <div className="login-button">login</div>
+            <div onClick={this.login} className="login-button">login</div>
           </div>
         </div>
-        <a className="register-link">register</a>
+        <a onClick={this.toggleRegister} className="register-link">register</a>
       </div>
     );
   }
