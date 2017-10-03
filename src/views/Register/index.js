@@ -3,10 +3,6 @@ import '../../styles/Register.css';
 
 export default class Register extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   register = () => {
     alert("@TODO Registering");
   }
