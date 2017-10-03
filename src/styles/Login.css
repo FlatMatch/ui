@@ -19,10 +19,16 @@
 /* Container for Login panel header. */
 .login-header {
     user-select: none;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
-    font-size: 40px;
     padding: 20px;
     border-bottom: 2px solid #EFEAEC;
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 100;
+    letter-spacing: normal;
+    line-height: 60px;
+    text-transform: none;
+    color: #000000;
 }
 
 /* Container for Login form. */
@@ -38,7 +44,6 @@
     font-variant: small-caps;
     border-radius: 5px;
     background-color: #F1EDEF;
-    
     width: 200px;
     border: 1px solid #E3E6E8;
     padding: 10px 22px;
