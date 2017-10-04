@@ -1,0 +1,9 @@
+/* Handle Splash Page / Loading Page CSS */
+
+.navbar-container {
+    width: 100%;
+    height: 30px;
+    background-color: #48BEFF;
+    padding: 15px;
+    font-size: 30px;
+}
