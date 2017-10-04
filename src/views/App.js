@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Spinner from 'react-spinkit';
+import Navbar from '../components/Navbar';
 import Login from './Login';
 import Register from './Register';
 import '../styles/App.css';
@@ -51,12 +52,18 @@ class App extends Component {
       else {
         if (this.state.showRegister) {
           return (
-            <Register toggleRegister={this.toggleRegister} />
+            <div>
+              <Navbar />
+              <Register toggleRegister={this.toggleRegister} />
+            </div>
           );
         }
         else {
           return (
+            <div>
+            <Navbar />
             <Login toggleRegister={this.toggleRegister} />          
+          </div>
           );
         }
       }
