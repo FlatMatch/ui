@@ -21,7 +21,7 @@ class App extends Component {
     var authToken = localStorage.getItem('authToken');
     console.log(authToken);
     // Mock API.
-    setTimeout(() => { this.setState({loading: false}); }, 5000);
+    setTimeout(() => { this.setState({loading: false}); }, 500);
   }
 
   /* Toggles Showing/Hiding of Register Page */
@@ -53,7 +53,9 @@ class App extends Component {
         if (this.state.showRegister) {
           return (
             <div>
-              <Navbar />
+              <div className="middle-logo">
+                <img alt="LOGO" src="http://via.placeholder.com/64x64" />
+              </div>
               <Register toggleRegister={this.toggleRegister} />
             </div>
           );
@@ -61,9 +63,11 @@ class App extends Component {
         else {
           return (
             <div>
-            <Navbar />
-            <Login toggleRegister={this.toggleRegister} />          
-          </div>
+              <div className="middle-logo">
+                <img alt="LOGO" src="http://via.placeholder.com/64x64" />
+              </div>
+              <Login toggleRegister={this.toggleRegister} />          
+            </div>
           );
         }
       }
