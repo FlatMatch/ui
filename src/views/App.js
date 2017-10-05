@@ -3,6 +3,8 @@ import Spinner from 'react-spinkit';
 import Navbar from '../components/Navbar';
 import Login from './Login';
 import Register from './Register';
+
+import {verifyAuthToken} from '../helpers/networking.js';
 import '../styles/App.css';
 
 class App extends Component {
@@ -19,9 +21,12 @@ class App extends Component {
   componentDidMount = () => {
     // Try get the authToken if it exists.
     var authToken = localStorage.getItem('authToken');
-    console.log(authToken);
-    // Mock API.
-    setTimeout(() => { this.setState({loading: false}); }, 500);
+    // Check Token is valid via API.
+    verifyAuthToken(authToken, (valid) => {
+      // Set state appropriately.
+      if (valid) { this.setState({ loading: false, authToken: authToken }); }
+      else { this.setState({ loading: false }); localStorage.removeItem('authToken'); }
+    });
   }
 
   /* Toggles Showing/Hiding of Register Page */
@@ -45,6 +50,7 @@ class App extends Component {
       if (this.state.authToken != null) {
         return (
           <div>
+            <Navbar />
             This component will host the logic to determine which view to show.
           </div>
         );
