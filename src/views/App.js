@@ -43,10 +43,23 @@ class App extends Component {
 
   
   login = (username, password) => {
-    alert('Username: ' + username + '\n Password: ' + password);
-    postLogin(username, password, (authToken) => {
-      alert('Login attempt returned authToken: ' + authToken);
+    postLogin(username, password, (err, authToken) => {
+      if (err) alert(err);
+      else if (authToken) {
+        localStorage.setItem('authToken', authToken);
+        this.setState({
+          authToken: authToken
+        });
+      }
+      else {
+        alert('Unkown error occurred, please try again.');
+      }
     });
+  }
+
+  logout = () => {
+    localStorage.removeItem('authToken');
+    this.setState({authToken: null})
   }
 
   render() {
@@ -63,6 +76,7 @@ class App extends Component {
           <div>
             <Navbar />
             This component will host the logic to determine which view to show.
+            <button onClick={this.logout}>Log Out</button>
           </div>
         );
       }
