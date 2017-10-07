@@ -12,7 +12,13 @@ module.exports = {
     postLogin: (username, password, cb) => {
         setTimeout(() => {
             cb(null, 'dummyAuthToken');
-        }, 3000);
+        }, 2000);
+    },
+
+    postRegister: (username, password, cb) => {
+        setTimeout(() => {
+            cb(null, 'dummyAuthToken');
+        }, 2000);
     }
 
 }
