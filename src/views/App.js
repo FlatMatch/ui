@@ -4,7 +4,10 @@ import Navbar from '../components/Navbar';
 import Login from './Login';
 import Register from './Register';
 
-import {verifyAuthToken} from '../helpers/networking.js';
+import {
+  verifyAuthToken,
+  postLogin
+} from '../helpers/networking.js';
 import '../styles/App.css';
 
 class App extends Component {
@@ -35,6 +38,14 @@ class App extends Component {
     console.log("Toggling register from: " + currState);
     this.setState({
       showRegister: !currState
+    });
+  }
+
+  
+  login = (username, password) => {
+    alert('Username: ' + username + '\n Password: ' + password);
+    postLogin(username, password, (authToken) => {
+      alert('Login attempt returned authToken: ' + authToken);
     });
   }
 
@@ -72,7 +83,7 @@ class App extends Component {
               <div className="middle-logo">
                 <img alt="LOGO" src="http://via.placeholder.com/64x64" />
               </div>
-              <Login toggleRegister={this.toggleRegister} />          
+              <Login toggleRegister={this.toggleRegister} login={this.login} />          
             </div>
           );
         }
