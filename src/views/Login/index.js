@@ -6,21 +6,21 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: ''
     }
   }
 
   login = () => {
-    this.props.login(this.state.username, this.state.password);
+    this.props.login(this.state.email, this.state.password);
   }
 
   toggleRegister = () => {
     this.props.toggleRegister();
   }
 
-  updateUsername = (event) => {
-    this.setState({username: event.target.value});
+  updateEmail = (event) => {
+    this.setState({email: event.target.value});
   }
 
   updatePassword = (event) => {
@@ -35,7 +35,7 @@ export default class Login extends Component {
         </div>
         <div className="login-body">
           <div align="center">
-            <input id="login_email" onChange={this.updateUsername} type="text" placeholder="email@sms.ed.ac.uk" size="20"></input>
+            <input id="login_email" onChange={this.updateEmail} type="text" placeholder="email@sms.ed.ac.uk" size="20"></input>
           </div>
           <br/>
           <div align="center">
