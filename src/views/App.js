@@ -6,6 +6,7 @@ import Register from './Register';
 
 import {
   verifyAuthToken,
+  postRegister,
   postLogin
 } from '../helpers/networking.js';
 import '../styles/App.css';
@@ -41,7 +42,21 @@ class App extends Component {
     });
   }
 
-  
+  register = (username, password) => {
+    postRegister(username, password, (err, authToken) => {
+      if (err) alert(err);
+      else if (authToken) {
+        localStorage.setItem('authToken', authToken);
+        this.setState({
+          authToken: authToken
+        });
+      }
+      else {
+        alert('Unkown error occurred, please try again.');
+      }
+    });
+  }
+
   login = (username, password) => {
     postLogin(username, password, (err, authToken) => {
       if (err) alert(err);
