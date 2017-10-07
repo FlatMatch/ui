@@ -9,13 +9,13 @@ module.exports = {
 
     /* Submits username and password to backend. */
     /* Callback with authToken: [ null, authToken ] */
-    postLogin: (username, password, cb) => {
+    postLogin: (email, password, cb) => {
         setTimeout(() => {
             cb(null, 'dummyAuthToken');
         }, 2000);
     },
 
-    postRegister: (username, password, cb) => {
+    postRegister: (first_name, last_name, email, password, cb) => {
         setTimeout(() => {
             cb(null, 'dummyAuthToken');
         }, 2000);
