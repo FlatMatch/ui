@@ -42,8 +42,8 @@ class App extends Component {
     });
   }
 
-  register = (username, password) => {
-    postRegister(username, password, (err, authToken) => {
+  register = (first_name, last_name, email, password) => {
+    postRegister(first_name, last_name, email, password, (err, authToken) => {
       if (err) alert(err);
       else if (authToken) {
         localStorage.setItem('authToken', authToken);
@@ -57,8 +57,8 @@ class App extends Component {
     });
   }
 
-  login = (username, password) => {
-    postLogin(username, password, (err, authToken) => {
+  login = (email, password) => {
+    postLogin(email, password, (err, authToken) => {
       if (err) alert(err);
       else if (authToken) {
         localStorage.setItem('authToken', authToken);
@@ -102,7 +102,7 @@ class App extends Component {
               <div className="middle-logo">
                 <img alt="LOGO" src="http://via.placeholder.com/64x64" />
               </div>
-              <Register toggleRegister={this.toggleRegister} />
+              <Register toggleRegister={this.toggleRegister} register={this.register} />
             </div>
           );
         }
