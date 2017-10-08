@@ -37,6 +37,17 @@ export default class Register extends Component {
     this.setState({password: event.target.value});
   }
 
+  handleKeyPress = (event) => {
+    if (event.keyCode === 13) {
+      if (this.state.first_name === '' || this.state.last_name === '' || this.state.email === '' || this.state.password === '') {
+        alert('Not all required fields have values.')
+      } 
+      else {
+        this.register();
+      }
+    }
+  }
+
   render() {
     return (
       <div className="register-container">
@@ -45,19 +56,19 @@ export default class Register extends Component {
         </div>
         <div className="register-body">
           <div align="center">
-            <input id="register_fname" onChange={this.updateFirstname} type="text" placeholder="First Name"></input>
+            <input id="register_fname" onChange={this.updateFirstname} onKeyDown={this.handleKeyPress} type="text" placeholder="First Name"></input>
           </div>
           <br/>
           <div align="center">
-            <input id="register_lname" onChange={this.updateLastname} type="text" placeholder="Last Name"></input>
+            <input id="register_lname" onChange={this.updateLastname} onKeyDown={this.handleKeyPress}type="text" placeholder="Last Name"></input>
           </div>
           <br/>
           <div align="center">
-            <input id="register_email" onChange={this.updateEmail} type="text" placeholder="email@sms.ed.ac.uk" size="20"></input>
+            <input id="register_email" onChange={this.updateEmail} onKeyDown={this.handleKeyPress} type="text" placeholder="email@sms.ed.ac.uk" size="20"></input>
           </div>
           <br/>
           <div align="center">
-            <input id="register_pword" onChange={this.updatePassword} type="password" placeholder="password"></input>
+            <input id="register_pword" onChange={this.updatePassword} onKeyDown={this.handleKeyPress} type="password" placeholder="password"></input>
           </div>
           <br/>
           <div align="center">
