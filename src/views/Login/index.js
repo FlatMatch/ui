@@ -27,6 +27,17 @@ export default class Login extends Component {
     this.setState({password: event.target.value});
   }
 
+  handleKeyPress = (event) => {
+    if (event.keyCode === 13) {
+      if (this.state.email === '' || this.state.password === '') {
+        alert('Not all required fields have values.')
+      } 
+      else {
+        this.login();
+      }
+    }
+  }
+
   render() {
     return (
       <div className="login-container">
@@ -35,11 +46,11 @@ export default class Login extends Component {
         </div>
         <div className="login-body">
           <div align="center">
-            <input id="login_email" onChange={this.updateEmail} type="text" placeholder="email@sms.ed.ac.uk" size="20"></input>
+            <input id="login_email" onChange={this.updateEmail} onKeyDown={this.handleKeyPress} type="text" placeholder="email@sms.ed.ac.uk" size="20"></input>
           </div>
           <br/>
           <div align="center">
-            <input id="login_pword" onChange={this.updatePassword} type="password" placeholder="password"></input>
+            <input id="login_pword" onChange={this.updatePassword} onKeyDown={this.handleKeyPress} type="password" placeholder="password"></input>
           </div>
           <br/>
           <div align="center">
