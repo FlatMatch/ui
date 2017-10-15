@@ -16,7 +16,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://flatmatch.github.io/ui/",
+  "homepage": "https://flatmatch.github.io/ui/build/",
   "devDependencies": {
     "gh-pages": "^1.0.0"
   }
